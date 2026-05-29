@@ -81,6 +81,7 @@ import com.movtery.zalithlauncher.ui.screens.content.elements.BaseFileItem
 import com.movtery.zalithlauncher.ui.theme.ZalithLauncherTheme
 import com.movtery.zalithlauncher.ui.theme.itemColor
 import com.movtery.zalithlauncher.ui.theme.onItemColor
+import com.movtery.zalithlauncher.ui.theme.showThemed
 import com.movtery.zalithlauncher.utils.animation.getAnimateTween
 import com.movtery.zalithlauncher.utils.animation.getAnimateTweenJellyBounce
 import com.movtery.zalithlauncher.utils.string.getMessageOrToString
@@ -403,7 +404,7 @@ private fun ImportFileOperation(
                                     .setMessage(messageString)
                                     .setPositiveButton(R.string.generic_confirm) { dialog, _ ->
                                         dialog.dismiss()
-                                    }.show()
+                                    }.showThemed()
                             }
                         }
                     }
