@@ -148,13 +148,11 @@ class ObservableNormalData(data: NormalData) : ObservableWidget() {
                 consumeEvent(false)
             }
             pressStart(eventHandler, allLayers)
-        } else if (this !in activeWidgets && isSwipple) {
+        } else if (this !in activeWidgets && isSwipple && !isToggleable) {
             //滑动到其他按钮时的处理
-            if (
-                activeWidgets.all {
-                    it is ObservableNormalData && it.isSwipple
-                } && isSwipple
-            ) {
+            //可切换控件不能被滑动触发
+            //如果有活跃的可切换控件，不允许滑动触发其他控件
+            if (activeWidgets.none { it is ObservableNormalData && it.isToggleable }) {
                 addThis()
                 pressStart(eventHandler, allLayers)
             }
@@ -162,14 +160,16 @@ class ObservableNormalData(data: NormalData) : ObservableWidget() {
     }
 
     override fun isReleaseOnOutOfBounds(): Boolean {
-        return isSwipple
+        //可切换控件不允许通过移出边界释放，防止滑动触发其他控件
+        return isSwipple && !isToggleable
     }
 
     override fun onPointerBackInBounds(
         eventHandler: EventHandler,
         allLayers: List<ObservableControlLayer>
     ) {
-        if (isSwipple) {
+        //可切换控件不允许通过滑动触发回边界
+        if (isSwipple && !isToggleable) {
             pressStart(eventHandler, allLayers)
         }
     }

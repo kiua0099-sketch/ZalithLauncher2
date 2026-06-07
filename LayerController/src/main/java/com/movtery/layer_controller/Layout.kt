@@ -55,6 +55,7 @@ import com.movtery.layer_controller.layout.TextButton
 import com.movtery.layer_controller.observable.ObservableButtonStyle
 import com.movtery.layer_controller.observable.ObservableControlLayer
 import com.movtery.layer_controller.observable.ObservableControlLayout
+import com.movtery.layer_controller.observable.ObservableNormalData
 import com.movtery.layer_controller.observable.ObservableWidget
 import com.movtery.layer_controller.utils.getWidgetPosition
 
@@ -144,6 +145,9 @@ private fun BoxWithConstraintsScope.BaseControlBoxLayout(
     val styles by observedLayout.styles.collectAsStateWithLifecycle()
 
     val allActiveWidgets = remember { mutableStateMapOf<PointerId, List<ObservableWidget>>() }
+    //fix: 记录因可滑动控件移出边界后进入"滑动链"的指针，
+    //持久化到 set 中，避免跨帧时状态丢失
+    val swippleChainPointers = remember { mutableSetOf<PointerId>() }
     val currentCheckOccupiedPointers by rememberUpdatedState(checkOccupiedPointers)
     val currentIsCursorGrabbing by rememberUpdatedState(isCursorGrabbing)
     val currentHideLayerWhen by rememberUpdatedState(hideLayerWhen)
@@ -173,6 +177,7 @@ private fun BoxWithConstraintsScope.BaseControlBoxLayout(
                             //抬起时，总是尝试释放该指针下活跃的按钮
                             //避免子级占用了指针后，导致按钮状态无法被释放
                             if (!isPressed) {
+                                swippleChainPointers.remove(pointerId)
                                 allActiveWidgets.remove(pointerId)?.forEach { widget ->
                                     widget.onReleaseEvent(eventHandler, reversedLayers)
                                 }
@@ -237,6 +242,7 @@ private fun BoxWithConstraintsScope.BaseControlBoxLayout(
                                 }
 
                             var activeWidgets = allActiveWidgets[pointerId] ?: emptyList()
+                            val activeWidgetsBeforeRelease = activeWidgets.toList()
 
                             //检查是否移出边界
                             if (activeWidgets.isNotEmpty()) {
@@ -271,12 +277,38 @@ private fun BoxWithConstraintsScope.BaseControlBoxLayout(
                                 }
                             }
 
+                            //fix: 当可滑动控件移出边界被释放，且activeWidgets被清空时，
+                            //标记该指针进入"滑动链"，持久化到set中，杜绝跨帧状态丢失。
+                            //此后该指针下不再允许触发非可滑动的控件
+                            if (activeWidgets.isEmpty() &&
+                                activeWidgetsBeforeRelease.any {
+                                    it is ObservableNormalData && it.isSwipple
+                                }
+                            ) {
+                                swippleChainPointers.add(pointerId)
+                            }
+
+                            //当手指回到任何可滑动控件上，可退出滑动链
+                            if (activeWidgets.isNotEmpty() &&
+                                pointerId in swippleChainPointers
+                            ) {
+                                swippleChainPointers.remove(pointerId)
+                            }
+
                             when {
                                 targetWidgets.isEmpty() -> {}
                                 else -> {
                                     for (targetWidget in targetWidgets) {
                                         if (targetWidget.canProcess()) {
                                             return@forEach //拒绝处理该事件
+                                        }
+
+                                        //fix: 在滑动链中，只允许触发可滑动且非可切换的控件
+                                        if (pointerId in swippleChainPointers &&
+                                            targetWidget is ObservableNormalData &&
+                                            (!targetWidget.isSwipple || targetWidget.isToggleable)
+                                        ) {
+                                            continue
                                         }
 
                                         targetWidget.onTouchEvent(
