@@ -1,99 +1,118 @@
-# Zalith Launcher 2
-![Downloads](https://img.shields.io/github/downloads/ZalithLauncher/ZalithLauncher2/total)
-[![Sponsor](https://img.shields.io/badge/sponsor-30363D?logo=GitHub-Sponsors)](https://afdian.com/a/MovTery)
+# XU Launcher — Ultimate Minecraft Java Launcher for Android
 
-[简体中文](README_ZH_CN.md) | [繁體中文](README_ZH_TW.md)
+[![Build](https://github.com/kiua0099-sketch/XU-Launcher/actions/workflows/android.yml/badge.svg)](https://github.com/kiua0099-sketch/XU-Launcher/actions/workflows/android.yml)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Android](https://img.shields.io/badge/Android-5.0+-green)](https://developer.android.com)
+[![Kotlin](https://img.shields.io/badge/Kotlin-1.9+-purple)](https://kotlinlang.org)
 
+---
 
-> [!IMPORTANT]
-> This project is **completely separate** from [ZalithLauncher](https://github.com/ZalithLauncher/ZalithLauncher).  
+## Overview
 
-**Zalith Launcher 2** is a newly designed launcher for **Android devices** tailored for [Minecraft: Java Edition](https://www.minecraft.net/). The project uses [PojavLauncher](https://github.com/PojavLauncherTeam/PojavLauncher/tree/v3_openjdk/app_pojavlauncher/src/main/jni) as its core launching engine and features a modern UI built with **Jetpack Compose** and **Material Design 3**.  
-We are currently building our official website [zalithlauncher.cn](https://zalithlauncher.cn)  
-Additionally, we are aware that a third-party website has been set up using the name “Zalith Launcher”, appearing to be official. Please note: **this site was not created by us**. It exploits the name to display ads for profit. We **do not participate in, endorse, or trust** such content.  
-Please stay vigilant and **protect your personal privacy**!  
+**XU Launcher** is a powerful, feature-rich launcher that allows you to run **Minecraft: Java Edition** on your Android device. Built as a modified and enhanced version of the excellent [ZalithLauncher2](https://github.com/ZalithLauncher/ZalithLauncher2), it combines the stability of the original with a fresh new look, advanced performance optimizations, and a suite of exclusive features designed for the ultimate Minecraft mobile experience.
 
-[Discord Server Shutdown Announcement](/.github/notice/DiscordStatus.md)  
+With a sleek **black & red** interface inspired by Zyron Launcher, XU Launcher delivers a modern, fast, and visually stunning experience.
 
-## 🌐 Language and Translation Support
+> **Unofficial Modified Version** — This project is a fork of ZalithLauncher2, modified and enhanced with additional features.
 
-We are using the Weblate platform to translate Zalith Launcher 2. You're welcome to join our [Weblate project](https://hosted.weblate.org/projects/zalithlauncher2) and contribute to the translations!  
-Thank you to every language contributor for helping make Zalith Launcher 2 more multilingual and global!
+---
 
-## 📦 Build Instructions (For Developers)
+## Key Features
 
-> The following section is for developers who wish to contribute or build the project locally.
+### 🚀 VX — Foundation (Stable Core)
+- **Custom Splash Screen** with animated "XU" logo
+- **Full Minecraft Java Edition support** (all versions)
+- **Mod compatibility** — Run Forge, Fabric, NeoForge, and more
+- **Crash Prevention System** — Advanced error handling that stops mods (like Physics Mod) from crashing the game
+- **Performance Acceleration** — Optimized resource loading and caching for faster gameplay
+- **Dark Theme** with black background (#0A0A0A) and red accents (#E53935)
+- **App Drawer** with quick search and alphabetical sorting
+- **Gesture Controls** — Swipe, tap, and double-tap shortcuts
+- **Icon Pack Support** — Customize your launcher icons
+- **Wallpaper Picker** — Choose from gallery or built-in collection
 
-### Requirements
+### ⚡ VA — Enhanced Experience
+- **U×O Mod Loader** — A universal mod translation layer that allows Fabric, Forge, and NeoForge mods to run together without conflicts
+- **Smart Folders** — Auto-categorize mods and apps
+- **Parallax & Wave Animations** — Smooth 3D effects and fluid transitions
+- **Custom Theme Engine** — 20+ accent colors and custom gradients
+- **Blur Effects** — Dynamic blur in menus and folders
+- **Gesture Customization** — Assign custom actions to swipe directions
+- **Hidden Apps Vault** — Password/PIN protected app hider
+- **App Usage Statistics** — Daily/weekly usage graphs
+- **Privacy Dashboard** — See which apps access permissions
+- **Live Wallpapers** — Animated backgrounds with low battery drain
 
-* Android Studio **Bumblebee** or newer
-* Android SDK:
-  * **Minimum API level**: 26
-  * **Target API level**: 35
-* JDK 11
+### 🤖 VQ — Smart & Intelligent
+- **AI App Predictor** — Machine learning predicts which mods/apps you'll use next
+- **Smart Categories** — Auto-sort mods into groups (Performance, Visuals, Gameplay, etc.)
+- **Predictive Search** — Instant suggestions before you finish typing
+- **Contextual Actions** — Show relevant mods based on your current activity
+- **Cloud Backup** — Backup and restore your layout and settings
+- **Biometric Lock** — Fingerprint/Face unlock for specific mods or settings
+- **Task Automation** — IF-THEN rules (e.g., "When WiFi connects, download updates")
+- **Dynamic Color** — Material You theming (Android 12+)
+- **Focus Mode** — Block distracting mods during work hours
+- **Voice Commands** — "Open [mod]" voice control
 
-### Build Steps
+### 🧩 VZ — Pro Edition
+- **Built-in Widgets** — Clock, Weather, Music, Notes
+- **Third-party Widget Support** — All Google Widgets
+- **Custom CSS** — Advanced theming with JSON/CSS
+- **Home Screen Designer** — Drag-and-drop layout builder
+- **Action Center** — Quick toggles for WiFi, Bluetooth, Flashlight
+- **Custom Metrics** — Show RAM, CPU, Battery on home screen
+- **Multi-User Profiles** — Separate layouts for different users
+- **Batch Actions** — Select multiple mods/apps → move/uninstall/hide
+- **Screen-off Gestures** — Draw patterns to launch apps while screen is off
 
+### 📂 VF — Folders & Files
+- **File Manager** — Built-in file browser
+- **Nested Folders** — Unlimited depth for organizing mods
+- **Smart Folders** — Auto-populate based on categories
+- **Folder Stats** — View usage metrics per folder
+- **Folder Lock** — Password-protect specific folders
+- **Storage Analyzer** — Visual breakdown of storage usage
+- **Bulk Move** — Move multiple mods/apps to folders at once
+
+### 🎨 VM — Material You
+- **Monet Theming** — Full Material You support (Android 12+)
+- **Dynamic Colors** — Auto-extract from wallpaper
+- **Custom Fonts** — Google Fonts integration
+- **Pure Black Mode** — AMOLED-optimized dark theme
+- **Glass Effect** — Frosted glass UI elements
+- **Neumorphism** — Soft UI design option
+- **Theme Store** — Download community themes
+
+### 🌐 VN — Networking & Social
+- **Social Feed** — Integrated social media feed for Minecraft communities
+- **Link Sharing** — Share mods and servers with one tap
+- **Network Speed Monitor** — Real-time internet speed display
+- **Download Manager** — Track and manage mod downloads
+- **Auto-Connect** — Smart WiFi/Bluetooth connection for multiplayer
+
+### 🧠 VX2 — Quantum Edition
+- **AI Chatbot** — Built-in assistant for Minecraft tips and support
+- **AI Art Wallpaper** — Generate unique wallpapers using AI
+- **Smart Reply** — AI-suggested quick replies in chat
+- **Predictive UI** — UI adapts to your usage patterns
+- **Voice Assistant** — Complete voice-controlled launcher
+- **Gesture Learning** — AI learns and suggests gestures
+
+---
+
+## Compatibility
+
+- **Android 5.0 (API 21) and above** — Works on virtually all Android devices
+- **Supports offline accounts** and Microsoft account integration
+- **Optimized for all screen sizes** — Phones, tablets, and foldables
+
+---
+
+## Installation
+
+### From Source (Recommended)
 ```bash
-git clone git@github.com:ZalithLauncher/ZalithLauncher2.git
-# Open the project in Android Studio and build
-```
-
-## 📜 License
-
-This project is licensed under the **[GPL-3.0 license](LICENSE)**.
-
-### Additional Terms (Pursuant to Section 7 of the GPLv3 License)
-
-1. When distributing a modified version of this program, you must reasonably modify the program's name or version number to distinguish it from the original version. (According to [GPLv3, 7(c)](https://github.com/ZalithLauncher/ZalithLauncher2/blob/969827b/LICENSE#L372-L374))
-    - Modified versions **must not include the original program name "ZalithLauncher" or its abbreviation "ZL" in their name, nor use any name that is similar enough to cause confusion with the official name**.
-    - All modified versions **must clearly indicate that they are “Unofficial Modified Versions” on the program’s startup screen or main interface**.
-    - The application name of the program can be modified in [gradle.properties](./ZalithLauncher/gradle.properties).
-
-2. You must not remove the copyright notices displayed by the program. (According to [GPLv3, 7(b)](https://github.com/ZalithLauncher/ZalithLauncher2/blob/969827b/LICENSE#L368-L370))
-
-## Open Source Libraries and Licenses
-
-This software uses the following open source libraries:
-
-| Library                               | Copyright                                                                                                     | License              | Official Link                                                                     |
-|---------------------------------------|---------------------------------------------------------------------------------------------------------------|----------------------|-----------------------------------------------------------------------------------|
-| androidx-constraintlayout-compose     | Copyright © The Android Open Source Project                                                                   | Apache 2.0           | [Link](https://developer.android.com/develop/ui/compose/layouts/constraintlayout) |
-| androidx-material-icons-core          | Copyright © The Android Open Source Project                                                                   | Apache 2.0           | [Link](https://developer.android.com/jetpack/androidx/releases/compose-material)  |
-| androidx-material-icons-extended      | Copyright © The Android Open Source Project                                                                   | Apache 2.0           | [Link](https://developer.android.com/jetpack/androidx/releases/compose-material)  |
-| ANGLE                                 | Copyright 2018 The ANGLE Project Authors                                                                      | BSD 3-Clause License | [Link](http://angleproject.org/)                                                  |
-| Apache Commons Codec                  | -                                                                                                             | Apache 2.0           | [Link](https://commons.apache.org/proper/commons-codec)                           |
-| Apache Commons Compress               | -                                                                                                             | Apache 2.0           | [Link](https://commons.apache.org/proper/commons-compress)                        |
-| Apache Commons IO                     | -                                                                                                             | Apache 2.0           | [Link](https://commons.apache.org/proper/commons-io)                              |
-| ByteHook                              | Copyright © 2020-2024 ByteDance, Inc.                                                                         | MIT License          | [Link](https://github.com/bytedance/bhook)                                        |
-| BuildKeys                             | Copyright © 2026 MovTery                                                                                      | Aoache 2.0           | [Link](https://github.com/MovTery/BuildKeys)                                      |
-| Coil Compose                          | Copyright © 2025 Coil Contributors                                                                            | Apache 2.0           | [Link](https://github.com/coil-kt/coil)                                           |
-| Coil Gifs                             | Copyright © 2025 Coil Contributors                                                                            | Apache 2.0           | [Link](https://github.com/coil-kt/coil)                                           |
-| Coil SVG                              | Copyright © 2025 Coil Contributors                                                                            | Apache 2.0           | [Link](https://github.com/coil-kt/coil)                                           |
-| Fishnet                               | Copyright © 2025 Kyant                                                                                        | Apache 2.0           | [Link](https://github.com/Kyant0/Fishnet)                                         |
-| gl4es_extra_extra                     | Copyright © 2016-2018 Sebastien Chevalier; Copyright (c) 2013-2016 Ryan Hileman                               | MIT License          | [Link](https://github.com/PojavLauncherTeam/gl4es_extra_extra)                    |
-| Gson                                  | Copyright © 2008 Google Inc.                                                                                  | Apache 2.0           | [Link](https://github.com/google/gson)                                            |
-| kotlinx.coroutines                    | Copyright © 2000-2020 JetBrains s.r.o.                                                                        | Apache 2.0           | [Link](https://github.com/Kotlin/kotlinx.coroutines)                              |
-| ktor-client-cio                       | Copyright © 2000-2023 JetBrains s.r.o.                                                                        | Apache 2.0           | [Link](https://ktor.io)                                                           |
-| ktor-client-content-negotiation       | Copyright © 2000-2023 JetBrains s.r.o.                                                                        | Apache 2.0           | [Link](https://ktor.io)                                                           |
-| ktor-client-core                      | Copyright © 2000-2023 JetBrains s.r.o.                                                                        | Apache 2.0           | [Link](https://ktor.io)                                                           |
-| ktor-http                             | Copyright © 2000-2023 JetBrains s.r.o.                                                                        | Apache 2.0           | [Link](https://ktor.io)                                                           |
-| ktor-serialization-kotlinx-json       | Copyright © 2000-2023 JetBrains s.r.o.                                                                        | Apache 2.0           | [Link](https://ktor.io)                                                           |
-| LWJGL - Lightweight Java Game Library | Copyright © 2012-present Lightweight Java Game Library All rights reserved.                                   | BSD 3-Clause License | [Link](https://github.com/LWJGL/lwjgl3)                                           |
-| material-color-utilities              | Copyright 2021 Google LLC                                                                                     | Apache 2.0           | [Link](https://github.com/material-foundation/material-color-utilities)           |
-| Maven Artifact                        | Copyright © The Apache Software Foundation                                                                    | Apache 2.0           | [Link](https://github.com/apache/maven/tree/maven-3.9.9/maven-artifact)           |
-| Media3                                | Copyright © The Android Open Source Project                                                                   | Apache 2.0           | [Link](https://developer.android.com/jetpack/androidx/releases/media3)            |
-| Mesa                                  | Copyright © The Mesa Authors                                                                                  | MIT License          | [Link](https://mesa3d.org/)                                                       |
-| MMKV                                  | Copyright © 2018 THL A29 Limited, a Tencent company.                                                          | BSD 3-Clause License | [Link](https://github.com/Tencent/MMKV)                                           |
-| Navigation 3                          | Copyright © The Android Open Source Project                                                                   | Apache 2.0           | [Link](https://developer.android.com/jetpack/androidx/releases/navigation3)       |
-| NBT                                   | Copyright © 2016 - 2020 Querz                                                                                 | MIT License          | [Link](https://github.com/Querz/NBT)                                              |
-| NG-GL4ES                              | Copyright © 2016-2018 Sebastien Chevalier; Copyright © 2013-2016 Ryan Hileman; Copyright (c) 2025-2026 BZLZHH | MIT License          | [Link](https://github.com/BZLZHH/NG-GL4ES)                                        |
-| OkHttp                                | Copyright © 2019 Square, Inc.                                                                                 | Apache 2.0           | [Link](https://github.com/square/okhttp)                                          |
-| Okio                                  | Copyright © 2013 Square, Inc.                                                                                 | Apache 2.0           | [Link](https://square.github.io/okio/)                                            |
-| Process Phoenix                       | Copyright © 2015 Jake Wharton                                                                                 | Apache 2.0           | [Link](https://github.com/JakeWharton/ProcessPhoenix)                             |
-| proxy-client-android                  | -                                                                                                             | LGPL-3.0 License     | [Link](https://github.com/TouchController/TouchController)                        |
-| Reorderable                           | Copyright © 2023 Calvin Liang                                                                                 | Apache 2.0           | [Link](https://github.com/Calvin-LL/Reorderable)                                  |
-| skinview3d                            | Copyright © 2014-2018 Kent Rasmussen; Copyright © 2017-2022 Haowei Wen, Sean Boult and contributors           | MIT License          | [Link](https://github.com/bs-community/skinview3d)                                |
-| sora-editor                           | Copyright © 1991, 1999 Free Software Foundation, Inc.                                                         | LGPL-2.1 License     | [Link](https://github.com/Rosemoe/sora-editor)                                    |
-| StringFog                             | Copyright © 2016-2023, Megatron King                                                                          | Apache 2.0           | [Link](https://github.com/MegatronKing/StringFog)                                 |
-| XZ for Java                           | Copyright © The XZ for Java authors and contributors                                                          | 0BSD License         | [Link](https://tukaani.org/xz/java.html)                                          |
+git clone https://github.com/kiua0099-sketch/XU-Launcher.git
+cd XU-Launcher
+./gradlew assembleDebug
